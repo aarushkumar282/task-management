@@ -1,0 +1,20 @@
+.main-content {
+  position: relative;
+  .container-class {
+    height: 89vh;
+  }
+  .sidebar {
+    background: #000;
+    height: 100%;
+    overflow-x: hidden;
+    .menu-list {
+      a {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+.sidebar .menu-list .mat-list-item {
+  color: #fff;
+}

@@ -1,0 +1,33 @@
+.header {
+  position: relative;
+  display: flex;
+  background-color: #f6bf06;
+  padding: 25px;
+}
+.row {
+  width: 50%;
+  display: inline-block;
+  position: inherit;
+  .menu_sidebar {
+    cursor: pointer;
+    width: 24px;
+    font-size: 28px;
+    color: #77afcf;
+    float: left;
+    padding-right: 45px;
+  }
+  h1 {
+    padding: 0px 20px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #77afcf;
+  }
+  .mat-flat-button {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    font-weight: 500;
+    background: #77afcf;
+    padding: 3px 16px;
+  }
+}

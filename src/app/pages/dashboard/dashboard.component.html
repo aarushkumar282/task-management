@@ -1,0 +1,13 @@
+<div class="task-viewer">
+  <div
+    class="taskStatus"
+    [ngClass]="{
+      below: completedPer * 100 < 33,
+      amber: completedPer * 100 > 33 && completedPer < 66,
+      green: completedPer * 100 > 66
+    }"
+  >
+    <p>Task Completed : {{ completedPer | percent }}</p>
+  </div>
+  <app-draggable (dragged)="taskStatus($event)"></app-draggable>
+</div>

@@ -1,0 +1,95 @@
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Add/Edit Task</h2>
+        <form
+          [formGroup]="addTask"
+          class="task-planner"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Task Title..."
+              formControlName="title"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+            />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+              <div *ngIf="f.title.errors.required">
+                Please enter title
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Description..."
+              formControlName="description"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+            />
+            <div
+              *ngIf="submitted && f.description.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.description.errors.required">
+                please enter description
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Select Priority</mat-label>
+              <mat-select
+                formControlName="priority"
+                [ngClass]="{ 'is-invalid': submitted && f.priority.errors }"
+              >
+                <mat-option value="Normal">Normal</mat-option>
+                <mat-option value="High">High</mat-option>
+                <mat-option value="Low">Low</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div
+              *ngIf="submitted && f.priority.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.priority.errors.required">Email is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Choose completion date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="picker"
+                [min]="min"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div *ngIf="submitted && f.picker.errors" class="invalid-feedback">
+              <div *ngIf="f.picker.errors.required">Password is required</div>
+              <div *ngIf="f.picker.errors.minlength">
+                Please enter completion date
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button mat-button class="btn btn-primary">
+              Save
+            </button>
+            <button mat-button class="btn btn-primary" (click)="cancel()">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

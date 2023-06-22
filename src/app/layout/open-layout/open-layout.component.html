@@ -1,0 +1,28 @@
+<div class="main-content">
+  <app-header (_toggleSideBar)="_toggleSidebar()"> </app-header>
+  <ng-sidebar-container class="container-class">
+    <ng-sidebar
+      [showBackdrop]="true"
+      [(opened)]="opened"
+      mode="push"
+      [dock]="true"
+      dockedSize="70px"
+      position="start"
+      [closeOnClickBackdrop]="true"
+    >
+      <mat-nav-list class="sidebar">
+        <app-menu-list-item
+          class="menu-list"
+          *ngFor="let item of navItems"
+          [item]="item"
+          [closed]="opened"
+          [expands]="expands"
+        ></app-menu-list-item>
+      </mat-nav-list>
+    </ng-sidebar>
+    <div ng-sidebar-content>
+      <router-outlet></router-outlet>
+    </div>
+  </ng-sidebar-container>
+  <app-footer></app-footer>
+</div>

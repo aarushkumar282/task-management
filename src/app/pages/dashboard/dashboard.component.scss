@@ -1,0 +1,22 @@
+.task-viewer {
+  padding: 40px;
+  padding-bottom: 55px;
+  .taskStatus {
+    &.below p {
+      color: red;
+    }
+    &.amber p {
+      color: #ffbf00;
+    }
+    &.green p {
+      color: green;
+    }
+    overflow: hidden;
+    padding: 10px 0;
+    p {
+      font-size: 25px;
+      float: right;
+      font-weight: 500;
+    }
+  }
+}
